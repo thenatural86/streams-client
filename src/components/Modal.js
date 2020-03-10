@@ -1,14 +1,10 @@
 import React from "react"
 import ReactDOM from "react-dom"
-import history from "../history"
 
 // created modal div in index.html underneath root element
 const Modal = props => {
   return ReactDOM.createPortal(
-    <div
-      onClick={() => history.push("/")}
-      className="ui dimmer modals visible active"
-    >
+    <div onClick={props.onDismiss} className="ui dimmer modals visible active">
       <div
         onClick={e => e.stopPropagation()}
         className="ui standard modal visible active"
