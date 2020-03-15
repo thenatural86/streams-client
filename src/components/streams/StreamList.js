@@ -4,19 +4,22 @@ import { Link } from "react-router-dom"
 import { fetchStreams } from "../../actions"
 
 class StreamList extends React.Component {
+  // only want to fetch data one time so goes in componentDidMount
   componentDidMount() {
     this.props.fetchStreams()
   }
 
-  // render edit/delete buttons
+  // helper method to render edit/delete buttons
   renderAdmin = stream => {
     // if this stream belongs to the user that is currently logged in render buttons
     if (stream.userId === this.props.currentUserId) {
       return (
         <div className="right floated content">
+          {/* navigate to edit component using the stream id,styled as a button */}
           <Link to={`streams/edit/${stream.id}`} className="ui button primary">
             Edit
           </Link>
+          {/* navigate to delete component using the stream id, styled as a button */}
           <Link
             to={`streams/delete/${stream.id}`}
             className="ui button negative"
@@ -28,10 +31,13 @@ class StreamList extends React.Component {
     }
   }
 
+  // helper method to render the list of streams
   renderList = () => {
+    // streams is array passed down via msp gets mapped over.
     return this.props.streams.map(stream => {
       return (
         <div className="item" key={stream.id}>
+          {/* render buttons on list if the stream belongs to the user */}
           {this.renderAdmin(stream)}
           <i className="large middle aligned icon camera" />
           <div className="content">
@@ -45,6 +51,7 @@ class StreamList extends React.Component {
     })
   }
 
+  // helper method to render create stream button if the user is signed in via google O-auth
   renderCreate() {
     if (this.props.isSignedIn) {
       return (
@@ -68,12 +75,14 @@ class StreamList extends React.Component {
   }
 }
 
+// data that is being made available to this component via react-redux msp
 const mapStateToProps = state => {
   return {
+    // streams are stored in object, so turn it into array so I can map over it. Object.values takes and object as an argument (state.streams), and turns all the values in the object into an array.
     streams: Object.values(state.streams),
     currentUserId: state.auth.userId,
     isSignedIn: state.auth.isSignedIn
   }
 }
-
+// dispatching the fetchStreams action creator
 export default connect(mapStateToProps, { fetchStreams })(StreamList)
