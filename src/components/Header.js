@@ -15,6 +15,7 @@ const Header = () => {
         <Link to="/" className="item">
           All Streams
         </Link>
+        {/* login/logout button */}
         <GoogleAuth />
       </div>
     </div>

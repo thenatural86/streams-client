@@ -17,6 +17,7 @@ const App = () => {
       <Router history={history}>
         <div>
           {/* Header will be visible no matter what th path is */}
+          {/* Header is a child of the Router and can make use of Link */}
           <Header />
           {/* Wrap all routes for app in Switch */}
           <Switch>
