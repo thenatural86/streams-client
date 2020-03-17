@@ -16,11 +16,12 @@ const App = () => {
       {/* Listens to history for changes in URL. Gives all pages access to history object */}
       <Router history={history}>
         <div>
-          {/* Header will on top of all pages in app */}
+          {/* Header will be visible no matter what th path is */}
           <Header />
           {/* Wrap all routes for app in Switch */}
           <Switch>
             {/* path prop decides if it should so component in screen or not. */}
+            {/* exact makes sure that the extracted path === the path and react only renders that component*/}
             <Route path="/" exact component={StreamList} />
             <Route path="/streams/new" exact component={StreamCreate} />
             <Route path="/streams/edit/:id" exact component={StreamEdit} />
