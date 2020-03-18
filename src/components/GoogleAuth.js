@@ -23,12 +23,14 @@ class GoogleAuth extends React.Component {
             this.auth = window.gapi.auth2.getAuthInstance()
             // isSignedIn is a property on the google auth object and can call get() to find out if you is signed in
             this.onAuthChange(this.auth.isSignedIn.get())
+            // call the listen method on the isSignedIn prototype. Pass in a reference to the onAuthChange Callback function.
             this.auth.isSignedIn.listen(this.onAuthChange)
           })
       }
     )
   }
 
+  // callback function for google auth change
   onAuthChange = isSignedIn => {
     if (isSignedIn) {
       this.props.signIn(this.auth.currentUser.get().getId())
