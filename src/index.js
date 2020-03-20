@@ -9,6 +9,7 @@ import reducers from "./reducers"
 
 // allows use of redux dev tools
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
+
 // creation of store which holds the state of the app
 const store = createStore(
   reducers,

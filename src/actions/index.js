@@ -1,5 +1,7 @@
 import streams from "../apis/streams"
 import history from "../history"
+
+//
 import {
   SIGN_IN,
   SIGN_OUT,
@@ -10,10 +12,14 @@ import {
   EDIT_STREAM
 } from "./types"
 
+// action creators
+
+// send action  of sign in to update boolean status of isSignedIn to true
 export const signIn = userId => {
   return { type: SIGN_IN, payload: userId }
 }
 
+// updates boolean status of isSignedIn to false
 export const signOut = () => {
   return { type: SIGN_OUT }
 }
