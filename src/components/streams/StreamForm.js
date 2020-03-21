@@ -3,8 +3,12 @@ import React from "react"
 import { Field, reduxForm } from "redux-form"
 
 class StreamForm extends React.Component {
+  // error handling helper method
+  // error and touched de-structured out of meta object
   renderError = ({ error, touched }) => {
+    // if user has touched the form and there is a error message
     if (touched && error) {
+      // return error message
       return (
         <div className="ui error message">
           <div className="header">{error}</div>
@@ -15,20 +19,27 @@ class StreamForm extends React.Component {
 
   // render input helper method
   // input and meta de-structured out of formProps object from redux form
+  // meta property has a meta.error property on it
   renderInput = ({ input, label, meta }) => {
+    // if meta.error and meta.touched are true, className = field error, otherwise className = field
     const className = `field ${meta.error && meta.touched ? "error" : ""}`
     return (
       <div className={className}>
         <label>{label}</label>
         {/* input properties from formProps added onto input element  */}
         <input {...input} autoComplete="off" />
+        {/* renderError helper method with meta property passed in. now renderError has access to meta object */}
         {this.renderError(meta)}
       </div>
     )
   }
 
+  // callback function for when form is submitted
+  // don't need to call e.preventDefault() b/c redux form takes care of it
+  // argument of formValues passed in
   onSubmit = formValues => {
     console.log("submit")
+    // onSubmit from StreamCreate component
     this.props.onSubmit(formValues)
   }
 
@@ -75,5 +86,6 @@ const validate = formValues => {
 export default reduxForm({
   // name for form ("streamCreate") has it's values stored inside the form reducer
   form: "streamForm",
+  // ES6 - validate function (validate: validate)
   validate
 })(StreamForm)
