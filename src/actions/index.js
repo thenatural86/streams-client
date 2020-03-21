@@ -14,7 +14,7 @@ import {
 
 // action creators
 
-// send action  of sign in to update boolean status of isSignedIn to true
+// send action  of sign in to update boolean status of isSignedIn to true, receives google userId as an argument and is added to action on the payload property
 export const signIn = userId => {
   return { type: SIGN_IN, payload: userId }
 }
