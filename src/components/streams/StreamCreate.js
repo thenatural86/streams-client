@@ -4,6 +4,9 @@ import { createStream } from "../../actions"
 import StreamForm from "./StreamForm"
 
 class StreamCreate extends React.Component {
+  // callback function for when form is submitted
+  // don't need to call e.preventDefault() b/c redux form takes care of it
+  // argument of formValues passed in
   onSubmit = formValues => {
     this.props.createStream(formValues)
   }

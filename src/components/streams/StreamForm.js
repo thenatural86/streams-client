@@ -36,6 +36,7 @@ class StreamForm extends React.Component {
     return (
       <form
         className="ui form error"
+        // handleSubmit is a callback function provided by redux form, pass in onSubmit callback function from streamCreate as argument
         onSubmit={this.props.handleSubmit(this.onSubmit)}
       >
         {/* field component imported from redux-form */}
@@ -52,15 +53,21 @@ class StreamForm extends React.Component {
   }
 }
 
+// gets called with formValues object which contains all the values form the form
 const validate = formValues => {
+  // initialize empty errors object
   const errors = {}
-
+  // if a user doesn't enter in a title
   if (!formValues.title) {
+    // return object with key/value pair with the name of the field and error message
     errors.title = "You must enter a title"
   }
+  // if a user doesn't enter in a description
   if (!formValues.description) {
+    // return object with key/value pair with the name of the field and error message
     errors.description = "You must enter a description"
   }
+  // otherwise return empty errors object
   return errors
 }
 
