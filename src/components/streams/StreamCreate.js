@@ -8,6 +8,7 @@ class StreamCreate extends React.Component {
   // don't need to call e.preventDefault() b/c redux form takes care of it
   // argument of formValues passed in
   onSubmit = formValues => {
+    // calls createStream action creator with formValues argument anytime user submits the form
     this.props.createStream(formValues)
   }
 
@@ -21,4 +22,5 @@ class StreamCreate extends React.Component {
   }
 }
 
+// connect createStream action creator
 export default connect(null, { createStream })(StreamCreate)

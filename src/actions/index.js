@@ -1,3 +1,4 @@
+// from axios api sever
 import streams from "../apis/streams"
 import history from "../history"
 
@@ -24,16 +25,20 @@ export const signOut = () => {
   return { type: SIGN_OUT }
 }
 
+// asynchronous create stream action creator.
+// Called with a list of values from the form as an argument, that gets called with dispatch and getState
 export const createStream = formValues => async (dispatch, getState) => {
   const { userId } = getState().auth
-
+  // response from api server with form values of stream that was just created by user and the users ID
   const response = await streams.post("/streams", { ...formValues, userId })
 
+  // dispatch of action with create stream type and a payload of the streams data
   dispatch({ type: CREATE_STREAM, payload: response.data })
   // Do some programmatic navigation to get user back to root route
   history.push("/")
 }
 
+// get request for all streams
 export const fetchStreams = () => async dispatch => {
   const response = await streams.get("/streams")
 
@@ -41,13 +46,17 @@ export const fetchStreams = () => async dispatch => {
   // console.log(response.data)
 }
 
+// get request for single stream, id of stream passed in
 export const fetchStream = id => async dispatch => {
+  // id of the stream we are trying to fetch
   const response = await streams.get(`/streams/${id}`)
 
   dispatch({ type: FETCH_STREAM, payload: response.data })
 }
 
+// patch request to edit stream with id of stream and edit that we are trying to make passed in
 export const editStream = (id, formValues) => async dispatch => {
+  // id of stream we are trying to edit and the changes to stream
   const response = await streams.patch(`/streams/${id}`, formValues)
 
   dispatch({ type: EDIT_STREAM, payload: response.data })
@@ -55,9 +64,12 @@ export const editStream = (id, formValues) => async dispatch => {
   history.push("/")
 }
 
+// delete request with id of stream we want to delete
 export const deleteStream = id => async dispatch => {
+  // no response, delete request of id
   await streams.delete(`/streams/${id}`)
 
+  // id of stream as payload
   dispatch({ type: DELETE_STREAM, payload: id })
   history.push("/")
 }
