@@ -26,10 +26,12 @@ export const signOut = () => {
 }
 
 // asynchronous create stream action creator.
-// Called with a list of values from the form as an argument, that gets called with dispatch and getState
+// Called with a list of values from the form as an argument, and return async function. This function gets called automatically by redux thunk with two arguments, the dispatch and getState functions.
+// getState allows us to reach into redux store and pull out a piece of data
 export const createStream = formValues => async (dispatch, getState) => {
+  // getState() returns the entire state object, then access the auth piece of state and destructure out userId
   const { userId } = getState().auth
-  // response from api server with form values of stream that was just created by user and the users ID
+  // response from api server with form values of stream that was just created by user and the users ID so we can identify if this stream belongs to the current user and do some conditional rendering
   const response = await streams.post("/streams", { ...formValues, userId })
 
   // dispatch of action with create stream type and a payload of the streams data

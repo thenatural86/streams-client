@@ -1,10 +1,11 @@
 import React from "react"
 import { connect } from "react-redux"
 import { Link } from "react-router-dom"
+// action creator
 import { fetchStreams } from "../../actions"
 
 class StreamList extends React.Component {
-  // only want to fetch data one time so goes in componentDidMount
+  // only want to call the action creator to fetch data one time so goes in componentDidMount
   componentDidMount() {
     this.props.fetchStreams()
   }
@@ -78,11 +79,11 @@ class StreamList extends React.Component {
 // data that is being made available to this component via react-redux msp
 const mapStateToProps = state => {
   return {
-    // streams are stored in object, so turn it into array so I can map over it. Object.values takes and object as an argument (state.streams), and turns all the values in the object into an array.
+    // streams is stored as an object, so turn it into array so that can be easily mapped over. Object.values takes an object as an argument (state.streams), and turns all the values in the object into an array called streams, which can be found in the components props (this.props.streams).
     streams: Object.values(state.streams),
     currentUserId: state.auth.userId,
     isSignedIn: state.auth.isSignedIn
   }
 }
-// dispatching the fetchStreams action creator
+// connect the fetchStreams action creator
 export default connect(mapStateToProps, { fetchStreams })(StreamList)
