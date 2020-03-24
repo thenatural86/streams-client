@@ -45,5 +45,5 @@ const mapStateToProps = (state, ownProps) => {
   }
 }
 
-//connect fetchStream action creator
+//connect fetchStream and editStream action creator
 export default connect(mapStateToProps, { fetchStream, editStream })(StreamEdit)

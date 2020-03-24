@@ -39,7 +39,7 @@ class StreamForm extends React.Component {
   // argument of formValues passed in
   onSubmit = formValues => {
     console.log("submit")
-    // onSubmit from StreamCreate component
+    // onSubmit callback from parent component
     this.props.onSubmit(formValues)
   }
 
