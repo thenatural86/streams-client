@@ -10,17 +10,17 @@ class StreamList extends React.Component {
     this.props.fetchStreams()
   }
 
-  // helper method to render edit/delete buttons
+  // helper method to render edit/delete buttons if the stream belongs to the current user
   renderAdmin = stream => {
-    // if this stream belongs to the user that is currently logged in render buttons
+    // if the userId of the stream is equal to the id of the current user render these buttons
     if (stream.userId === this.props.currentUserId) {
       return (
         <div className="right floated content">
-          {/* navigate to edit component using the stream id,styled as a button */}
+          {/* navigate user to edit component using the stream id with Link tag styled as a button */}
           <Link to={`streams/edit/${stream.id}`} className="ui button primary">
             Edit
           </Link>
-          {/* navigate to delete component using the stream id, styled as a button */}
+          {/* navigate user to delete component using the stream id with Link tag styled as a button */}
           <Link
             to={`streams/delete/${stream.id}`}
             className="ui button negative"
@@ -54,6 +54,7 @@ class StreamList extends React.Component {
 
   // helper method to render create stream button if the user is signed in via google O-auth
   renderCreate() {
+    // if the user is signed in render the link (styled as a button) to the stream create page.
     if (this.props.isSignedIn) {
       return (
         <div style={{ textAlign: "right" }}>
@@ -81,7 +82,9 @@ const mapStateToProps = state => {
   return {
     // streams is stored as an object, so turn it into array so that can be easily mapped over. Object.values takes an object as an argument (state.streams), and turns all the values in the object into an array called streams, which can be found in the components props (this.props.streams).
     streams: Object.values(state.streams),
+    // get the user id out of redux store and assign to currentUserId
     currentUserId: state.auth.userId,
+    // isSignedIn property from the auth object in redux store
     isSignedIn: state.auth.isSignedIn
   }
 }

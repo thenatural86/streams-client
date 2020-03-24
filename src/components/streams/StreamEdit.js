@@ -5,8 +5,11 @@ import { connect } from "react-redux"
 import { fetchStream, editStream } from "../../actions/index"
 import StreamForm from "./StreamForm"
 
+// props (history, location and match)passed down from react router dom Route tag
 class StreamEdit extends React.Component {
+  //fetches data for the stream we want to edit
   componentDidMount() {
+    // fetchStream action creator with id of stream we want to edit passed in
     this.props.fetchStream(this.props.match.params.id)
   }
 
@@ -32,10 +35,15 @@ class StreamEdit extends React.Component {
   }
 }
 
+// gets called with two arguments, our state object and ownProps which is a reference to the props object (from react-router-dom library) that shows up in our edit stream component
 const mapStateToProps = (state, ownProps) => {
   // console.log(ownProps)
+  // return a object that has a stream property
+  // use ownProps [] notation to select the appropriate stream from the streams piece of state in redux store and assign it top stream
   return {
     stream: state.streams[ownProps.match.params.id]
   }
 }
+
+//connect fetchStream action creator
 export default connect(mapStateToProps, { fetchStream, editStream })(StreamEdit)

@@ -1,5 +1,6 @@
 // from axios api sever
 import streams from "../apis/streams"
+// allow us to programmatically navigate user around app
 import history from "../history"
 
 //
@@ -36,7 +37,7 @@ export const createStream = formValues => async (dispatch, getState) => {
 
   // dispatch of action with create stream type and a payload of the streams data
   dispatch({ type: CREATE_STREAM, payload: response.data })
-  // Do some programmatic navigation to get user back to root route
+  // Do some programmatic navigation to get user back to root route after we dispatch the action
   history.push("/")
 }
 

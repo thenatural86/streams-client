@@ -13,6 +13,7 @@ import history from "../history"
 const App = () => {
   return (
     <div className="ui container">
+      {/* Use Router b/c we create history object ourselves */}
       {/* Listens to history for changes in URL. Gives all pages access to history object */}
       <Router history={history}>
         <div>

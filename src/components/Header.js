@@ -5,7 +5,10 @@ import GoogleAuth from "./GoogleAuth"
 //Use Link from react router dom to create inner app links to home page
 const Header = () => {
   return (
-    <div className="ui secondary pointing menu">
+    <div
+      // style={{ backgroundColor: "#a478c1" }}
+      className="ui secondary pointing menu"
+    >
       {/* link to root route */}
       <Link to="/" className="item">
         Stream-Tastic!
