@@ -10,6 +10,7 @@ class StreamShow extends React.Component {
     this.videoRef = React.createRef()
   }
 
+  // call fetchStream with id of stream we want to fetch. destructure id from match object
   componentDidMount() {
     // destructuring out id property
     const { id } = this.props.match.params
@@ -45,9 +46,11 @@ class StreamShow extends React.Component {
   }
 
   render() {
+    // if the data has not been returned yet
     if (!this.props.stream) {
       return <div>Loading...</div>
     }
+    // destructure title and description
     const { title, description } = this.props.stream
     return (
       <div>
@@ -58,11 +61,13 @@ class StreamShow extends React.Component {
     )
   }
 }
-
+// map state and ownProps to props
 const mapStateToProps = (state, ownProps) => {
+  // return object with a stream property and  value of the id from ownProps on the streams piece of state
   return { stream: state.streams[ownProps.match.params.id] }
 }
 
+// connect msp and fetchStream action creator
 export default connect(mapStateToProps, { fetchStream })(StreamShow)
 
 // class component look at url, get id, fetch that stream, get stream out of store, then show in render

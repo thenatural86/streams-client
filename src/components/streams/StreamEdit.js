@@ -47,7 +47,7 @@ class StreamEdit extends React.Component {
 const mapStateToProps = (state, ownProps) => {
   // console.log(ownProps)
   // return a object that has a stream property
-  // use ownProps [] notation to select the appropriate stream from the streams piece of state in redux store and assign it top stream
+  // use ownProps [] notation to select the appropriate stream from the streams piece of state in redux store and assign it to stream
   return {
     stream: state.streams[ownProps.match.params.id]
   }
