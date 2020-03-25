@@ -60,10 +60,12 @@ export const fetchStream = id => async dispatch => {
 // patch request to edit stream with id of stream and edit that we are trying to make passed in
 export const editStream = (id, formValues) => async dispatch => {
   // id of stream we are trying to edit and the changes to stream
+  // use PATCH request instead of PUT to update only some properties instead of all the properties
   const response = await streams.patch(`/streams/${id}`, formValues)
 
   dispatch({ type: EDIT_STREAM, payload: response.data })
 
+  // programmatically navigate user back to root route
   history.push("/")
 }
 
@@ -74,5 +76,6 @@ export const deleteStream = id => async dispatch => {
 
   // id of stream as payload
   dispatch({ type: DELETE_STREAM, payload: id })
+  // programmatically navigate user back to root route
   history.push("/")
 }

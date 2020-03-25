@@ -24,6 +24,7 @@ const App = () => {
           <Switch>
             {/* path prop decides if it should so component in screen or not. */}
             {/* exact makes sure that the extracted path === the path and react only renders that component*/}
+            {/* REST-ful conventions */}
             <Route path="/" exact component={StreamList} />
             <Route path="/streams/new" exact component={StreamCreate} />
             <Route path="/streams/edit/:id" exact component={StreamEdit} />
