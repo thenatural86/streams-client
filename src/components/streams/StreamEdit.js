@@ -13,7 +13,10 @@ class StreamEdit extends React.Component {
     this.props.fetchStream(this.props.match.params.id)
   }
 
+  // callback function that gets passed down to StreamForm
+  // receives formValues
   onSubmit = formValues => {
+    // edit stream action creator called with id of stream and formValues
     this.props.editStream(this.props.match.params.id, formValues)
   }
 
@@ -26,8 +29,13 @@ class StreamEdit extends React.Component {
     return (
       <div>
         <h3>Edit a Stream</h3>
+        {/* render StreamForm component */}
         <StreamForm
+          // specify initialValues prop from redux form
+          // pass in the stream object from this.props.stream
+          // .pick() from lodash picks out the values that we specify ("title", "description") from the this.props.stream object
           initialValues={_.pick(this.props.stream, "title", "description")}
+          // onSubmit callback
           onSubmit={this.onSubmit}
         />
       </div>

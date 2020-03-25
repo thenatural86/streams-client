@@ -16,6 +16,7 @@ class StreamCreate extends React.Component {
     return (
       <div>
         <h3>Create a Stream</h3>
+        {/* callback function passed down to stream form */}
         <StreamForm onSubmit={this.onSubmit} />
       </div>
     )
