@@ -5,4 +5,4 @@ As a fan of websites that use live streaming technology such as twitch.com and y
 ## Build Status
 Complete
 ## Tech/Frameworks Used
-React, Redux
+React, React Router, Redux, Redux Thunk, Google OAuth2 API, React Portals, React Refs, Axios, Semantic UI
