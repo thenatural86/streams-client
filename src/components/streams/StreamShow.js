@@ -20,24 +20,30 @@ class StreamShow extends React.Component {
     // console.log(this.videoRef)
     // fetch the stream data
     this.props.fetchStream(id)
+    // call to build the player on first load
     this.buildPlayer()
   }
 
   // component fetches stream successfully and re-renders componentDidUpdate gets called
   componentDidUpdate() {
+    // builds the player after we successfully fetch the stream
     this.buildPlayer()
   }
 
+  // un-mount player from component
   componentWillUnmount() {
+    // detach the player from video element in render method
     this.player.destroy()
-    console.log("unmount")
+    // console.log("unmount")
   }
 
+  // helper method that builds the video player
   buildPlayer() {
+    // if the player exist or if the stream doesn't yet exist return
     if (this.player || !this.props.stream) {
       return
     }
-
+    // otherwise
     const { id } = this.props.match.params
 
     // create and assign flv player and pass in a options object
