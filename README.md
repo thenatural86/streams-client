@@ -5,4 +5,11 @@ As a fan of websites that use live streaming technology such as twitch.com and y
 ## Build Status
 Complete
 ## Tech/Frameworks Used
-React, React Router, Redux, Redux Thunk, Google OAuth2 API, React Portals, React Refs, Axios, Semantic UI
+React, React Router, Redux, Redux Thunk, Redux Form, Google OAuth2 API, React Portals, React Refs, Axios, Semantic UI, Lodash, FLV Media Container, Real-Time Messaging Protocol (RTMP) server.
+## Features
+-A user can log in and log out of the application using Googles OAuth2
+-Once logged in a user can create a stream
+-A user can view a stream
+-A user can edit a stream that they created
+-A user can delete a stream that they created
+## Screenshots
