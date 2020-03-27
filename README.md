@@ -16,3 +16,5 @@ React, React Router, Redux, Redux Thunk, Redux Form, Google OAuth2 API, React Po
 <img width="1303" alt="Screen Shot 2020-03-27 at 11 18 29 AM" src="https://user-images.githubusercontent.com/44248618/77771808-91c21680-701d-11ea-810b-a10f9596c893.png">
 
 <img width="1326" alt="Screen Shot 2020-03-27 at 11 28 01 AM" src="https://user-images.githubusercontent.com/44248618/77772200-22005b80-701e-11ea-87fb-cb19f2e6a472.png">
+
+<img width="1335" alt="Screen Shot 2020-03-27 at 11 29 55 AM" src="https://user-images.githubusercontent.com/44248618/77772379-6b50ab00-701e-11ea-8c84-8928e4240bcd.png">
