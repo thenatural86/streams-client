@@ -13,6 +13,8 @@ React, React Router, Redux, Redux Thunk, Redux Form, Google OAuth2 API, React Po
 - A user can edit a stream that they created
 - A user can delete a stream that they created
 ## Screenshots
+<img width="1244" alt="Screen Shot 2020-03-27 at 11 50 06 AM" src="https://user-images.githubusercontent.com/44248618/77774261-27ab7080-7021-11ea-9677-ad67e2d0a6ba.png">
+
 <img width="1303" alt="Screen Shot 2020-03-27 at 11 18 29 AM" src="https://user-images.githubusercontent.com/44248618/77771808-91c21680-701d-11ea-810b-a10f9596c893.png">
 
 <img width="1326" alt="Screen Shot 2020-03-27 at 11 28 01 AM" src="https://user-images.githubusercontent.com/44248618/77772200-22005b80-701e-11ea-87fb-cb19f2e6a472.png">
