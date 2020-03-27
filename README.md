@@ -29,3 +29,6 @@ React, React Router, Redux, Redux Thunk, Redux Form, Google OAuth2 API, React Po
 <img width="1368" alt="Screen Shot 2020-03-27 at 2 47 36 PM" src="https://user-images.githubusercontent.com/44248618/77789991-6699f000-703a-11ea-990c-ea62053a4db9.png">
 
 <img width="1352" alt="Screen Shot 2020-03-27 at 2 47 46 PM" src="https://user-images.githubusercontent.com/44248618/77790107-96e18e80-703a-11ea-869d-caa8faeb8930.png">
+
+## Credits
+Philip Smalls - Bulit using the "Modern React with Redux" course taught by Stephan Grider on udemy.com  
