@@ -11,12 +11,12 @@ const Header = () => {
     >
       {/* link to root route */}
       <Link to="/" className="item">
-        Stream-Tastic!
+        <div className="logo">Streami-Vice!</div>
       </Link>
       <div className="right menu">
         {/* link to root route */}
         <Link to="/" className="item">
-          All Streams
+          <div className="logo">All Streams</div>
         </Link>
         {/* login/logout button */}
         <GoogleAuth />

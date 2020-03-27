@@ -9,10 +9,22 @@ import Header from "./Header"
 // keeps track of the address bar in browser
 import history from "../history"
 
+import "./App.css"
+
 // Router allows navigation around app by matching the url path.
 const App = () => {
   return (
-    <div className="ui container">
+    <div
+      style={
+        {
+          // backgroundColor: "pink",
+          // borderRadius: "15px"
+          // height: "95vh",
+          // padding: "15px"
+        }
+      }
+      className="ui container"
+    >
       {/* Use Router b/c we create history object ourselves */}
       {/* Listens to history for changes in URL. Gives all pages access to history object */}
       <Router history={history}>

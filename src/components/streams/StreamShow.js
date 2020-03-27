@@ -71,8 +71,10 @@ class StreamShow extends React.Component {
         {/* video element with reference to actual video element and gets passed off to the video jsx tag*/}
         {/* give video a width and controls (controls=true) props  */}
         <video ref={this.videoRef} style={{ width: "100%" }} controls />
-        <h1>{title}</h1>
-        <h5>{description}</h5>
+        <div className="stream-info">
+          <h3>Title: {title}</h3>
+          <h5>Description: {description}</h5>
+        </div>
       </div>
     )
   }
