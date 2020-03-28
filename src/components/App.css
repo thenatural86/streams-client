@@ -1,14 +1,14 @@
 @import url('https://fonts.googleapis.com/css?family=Orbitron&display=swap');
 
 body {
-  background-color: rgb(151, 255, 218);
+  background-color: #f6f5f3;
   margin-top: 2vh;
   background-repeat: repeat;
   /* background-image: url("https://i.pinimg.com/originals/f9/aa/69/f9aa69b2e50df71f618ae98a5a6a00be.jpg"); */
 }
 
 .logo {
-  font-family: 'Orbitron', sans-serif;
+  /* font-family: 'Orbitron', sans-serif; */
 }
 
 .logo:hover {
@@ -17,7 +17,7 @@ body {
 
 .stream-info {
   border-radius: 8px;
-  background-color: rgba(241, 255, 192, 0.842);
+  background-color: #f9f8fd;
   margin-top: 2vh;
   padding: 5px
 }

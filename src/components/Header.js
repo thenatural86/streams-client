@@ -11,7 +11,7 @@ const Header = () => {
     >
       {/* link to root route */}
       <Link to="/" className="item">
-        <div className="logo">Streami-Vice!</div>
+        <div className="logo">My Stream</div>
       </Link>
       <div className="right menu">
         {/* link to root route */}
