@@ -13,13 +13,13 @@ React, React Router, Redux, Redux Thunk, Redux Form, Google OAuth2 API, React Po
 - A user can edit a stream that they created
 - A user can delete a stream that they created
 ## Screenshots
-<img width="1244" alt="Screen Shot 2020-03-27 at 11 50 06 AM" src="https://user-images.githubusercontent.com/44248618/77774261-27ab7080-7021-11ea-9677-ad67e2d0a6ba.png">
+<img width="1253" alt="Screen Shot 2020-03-28 at 10 51 01 AM" src="https://user-images.githubusercontent.com/44248618/77825956-ec717600-70e2-11ea-9480-6b169c882a18.png">
 
-<img width="1303" alt="Screen Shot 2020-03-27 at 11 18 29 AM" src="https://user-images.githubusercontent.com/44248618/77771808-91c21680-701d-11ea-810b-a10f9596c893.png">
+<img width="1258" alt="Screen Shot 2020-03-28 at 10 51 23 AM" src="https://user-images.githubusercontent.com/44248618/77825973-fc895580-70e2-11ea-80cc-0659bbe0a8e1.png">
 
-<img width="1326" alt="Screen Shot 2020-03-27 at 11 28 01 AM" src="https://user-images.githubusercontent.com/44248618/77772200-22005b80-701e-11ea-87fb-cb19f2e6a472.png">
+<img width="1333" alt="Screen Shot 2020-03-28 at 10 55 04 AM" src="https://user-images.githubusercontent.com/44248618/77825990-13c84300-70e3-11ea-9e2f-03ceaa0ad2b5.png">
 
-<img width="1335" alt="Screen Shot 2020-03-27 at 11 29 55 AM" src="https://user-images.githubusercontent.com/44248618/77772379-6b50ab00-701e-11ea-8c84-8928e4240bcd.png">
+<img width="1261" alt="Screen Shot 2020-03-28 at 10 56 13 AM" src="https://user-images.githubusercontent.com/44248618/77825996-1e82d800-70e3-11ea-890e-e6389509a8cb.png">
 
 ## Code Examples
 <img width="1348" alt="Screen Shot 2020-03-27 at 2 47 16 PM" src="https://user-images.githubusercontent.com/44248618/77789799-1884ec80-703a-11ea-89ab-1e7292ea4bf8.png">
